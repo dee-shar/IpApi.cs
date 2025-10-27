@@ -1,8 +1,20 @@
-# ip_api.sh
+# IpApi.cs
 Web-API for [ip-api.com] an fast, accurate, reliable IP Geolocation API
 
 ## Example
-```bash
-source ./ip_api.sh
-get_ip_info "ip_address"
+```cs
+using IPGeolocationApi;
+
+namespace Application
+{
+    internal class Program
+    {
+        static async Task Main()
+        {
+            var api = new IpApi();
+            string ipInfo = await api.GetMyIp();
+            Console.WriteLine(ipInfo);
+        }
+    }
+}
 ```
